@@ -4,6 +4,7 @@ body {
   background: url('back.png') no-repeat center center fixed;
   background-size: cover;
   color: #eee;
+  cursor: url('Cursor.png') 16 16, auto;
 }
 
 nav {
@@ -13,10 +14,112 @@ nav {
   background: black;
 }
 
+nav.nav-container {
+  position: fixed;
+  right: 1.5rem;
+  top: 0;
+  height: 75vh;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 28px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 28px;
+  gap: 1rem;
+  width: 100%;
+  max-width: 700px;
+  min-width: 700px;
+  z-index: 10;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+nav.nav-container h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+}
+
+nav.nav-container img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 14px;
+}
+
+nav.nav-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  align-items: center;
+}
+
+nav.nav-container a {
+  margin: 0;
+  display: block;
+  width: auto;
+  min-width: 280px;
+  padding: 12px 16px;
+  font-size: 36px;
+  background: rgba(0, 0, 0, 0.452);
+  border-radius: 14px;
+  border: 1px solid rgba(216, 175, 175, 0.12);
+  text-align: center;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+nav.nav-container a:hover {
+  background: rgba(180, 31, 31, 0.808);
+  transform: translateX(3px);
+  border-color: rgba(175, 32, 32, 0.24);
+}
+
 nav a {
   color: white;
   margin-left: 20px;
   text-decoration: none;
+}
+
+.featured-image {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lore-image {
@@ -125,7 +228,7 @@ footer a .fa {
 
  h3 {
   color: rgb(238, 238, 238);
-  font-size: larger;
+  font-size: 20px;
 }
 
 * {
@@ -269,7 +372,6 @@ footer a .fa {
   position: relative;
   width: 100%;
 }
-
 
 
 @media (max-width: 680px) {
