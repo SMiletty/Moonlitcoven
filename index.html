@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Page - Moonlit Coven</title>
+<link rel="icon" type="image/x-icon" href="/image/Logo_Red.png">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,23 +13,36 @@
 </head>
 <body>
 
-<nav>
-  <h2>Sybil: Amante de Fati
-</h2>
+<nav class="nav-container"> 
+  <img src="image/wLogo_transparent.png" alt="Sybil Logo">
   <div>
-      <a href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="lore.html">Lore</a>
     <a href="gameplay.html">Gameplay</a>
-	<a href="about.html">About the Developers</a>
+    <a href="about.html">About the Developers</a>
   </div>
 </nav>
 
-<header>
-  
-  <h1>Fate is carved in blood.</h1>
-</header>
-
-
+<section class="featured-image">
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="Load.jpg" alt="Moonlit Coven feature image">
+    </div>
+    <div class="slide">
+      <img src="Main.jpg" alt="Moonlit Coven main scene">
+    </div>
+    <div class="slide">
+      <img src="blob.png" alt="Moonlit Coven landscape">
+    </div>
+    <div class="slide">
+      <img src="eye.png" alt="Moonlit Coven character image">
+    </div>
+     <div class="slide">
+      <img src="swirl.png" alt="Moonlit Coven character image">
+    </div>
+    
+  </div>
+</section>
 
 <footer>
  <p>contact us at <a href="mailto:moonlitcoven3@gmail.com">Moonlit Coven </a></p>
@@ -36,6 +50,24 @@
  <a href="https://www.youtube.com/@MoonlitCoven" target="_blank"><i style="font-size:24px" class="fa">&#xf16a;</i></a>
  
 </footer>
+<script>
+  const slides = document.querySelectorAll('.slideshow .slide');
+  let currentSlide = 0;
+  const slideInterval = 4500;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, slideInterval);
+</script>
 
 </body>
 </html>
